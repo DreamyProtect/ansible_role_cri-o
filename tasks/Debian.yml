@@ -1,0 +1,14 @@
+---
+- name: "Add CRI-O apt repository keys"
+  shell: |
+    echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
+    echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }} /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:1.20.list
+    curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/Release.key | apt-key add -
+    curl -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/Release.key | apt-key add -
+
+
+- name: "Install CRI-O on Debian"
+  apt:
+    name:
+      "{{ _cri_o_packages }}"
+    update_cache: yes
