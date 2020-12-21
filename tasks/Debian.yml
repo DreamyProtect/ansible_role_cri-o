@@ -1,7 +1,7 @@
 ---
 - name: "Add CRI-O apt repository key"
   apt_key:
-    url: "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/Release.key" # noqa 204
+    url: "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ cri_o_kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/Release.key" # noqa 204
     state: present
 
 - name: "Add libcontainer repository key"
@@ -17,8 +17,8 @@
 
 - name: "Add cri-o repository"
   apt_repository:
-    repo: "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/ /" # noqa 204
-    filename: "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:{{ kubernetes_version }}"
+    repo: "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/{{ cri_o_kubernetes_version }}/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/ /" # noqa 204
+    filename: "/etc/apt/sources.list.d/devel:kubic:libcontainers:stable:cri-o:{{ cri_o_kubernetes_version }}"
     state: present
 
 - name: "Install CRI-O on Debian"

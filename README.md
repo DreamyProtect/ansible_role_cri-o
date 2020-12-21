@@ -18,7 +18,7 @@
 
 ## Usage
 
-You can use this role in any Ansible playbook like this :
+You can use this role in your Ansible playbook like this :
 
 ```
 - name: "Install CRI-O on Kubernetes nodes"
@@ -27,10 +27,10 @@ You can use this role in any Ansible playbook like this :
     - ansible_role_cri-o
 ```
 
-You can install any version of CRI-O by specifying it in your hostvars or groupvars :
+You can install a specific version of CRI-O by adding the cri_o_kubernetes_version in your hostvars or groupvars :
 
 ```
-kubernetes_version: 1.20
+cri_o_kubernetes_version: 1.20
 ```
 
 ## Author
