@@ -12,9 +12,6 @@
     register: crio_status
     become: true
 
-  - debug:
-      msg: "{{ crio_status.state }}"
-
   - name: "Make sure CRI-O is reloaded"
     assert:
       that: crio_status.state == "started"

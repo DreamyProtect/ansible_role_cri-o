@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+lint: |
+  set -e
+  yamllint -c .yamllint .
+  ansible-lint .
+driver:
+  name: vagrant
+  provider: 
+    name: libvirt
+    type: libvirt
+    options:
+      memory: 2048
+      cpus: 2
+platforms:
+  - name: debian10-node
+    box: debian/buster64
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
