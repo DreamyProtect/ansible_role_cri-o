@@ -3,9 +3,3 @@
 - name: install cri-o on Debian
   import_tasks: Debian.yml
   become: true
-  when: ansible_distribution == 'Debian'
-
-- name: Install cri-o on CentOS
-  import_tasks: CentOS.yml
-  become: true
-  when: ansible_distribution == 'CentOS'
