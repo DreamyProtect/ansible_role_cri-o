@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> A role to install CRI-O on Debian or CentOS
+> A role to install CRI-O on Debian
 
 ### 🏠 [Homepage](https://github.com/DreamyProtect/ansible_role_cri-o)
 
