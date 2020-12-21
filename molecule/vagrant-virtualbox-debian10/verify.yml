@@ -1,0 +1,17 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: "Gather CRI-O service status"
+    systemd:
+      name: cri-o
+      state: started
+    register: crio_status
+    become: true
+
+  - name: "Make sure CRI-O is reloaded"
+    assert:
+      that: crio_status.state == "started"

@@ -1,0 +1,23 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Add apt backport repository"
+      apt_repository:
+        repo: deb http://deb.debian.org/debian buster-backports main
+        state: "present"
+      become: true
+
+    - name: install apt required packages
+      apt:
+        name:
+          - gnupg2
+          - "libseccomp2=2.4*"
+        update_cache: yes
+        default_release: "buster-backports"
+      become: true
+      when: ansible_distribution == 'Debian'
+
+    - name: "Include ansible_role_cri_o"
+      include_role:
+        name: "ansible_role_cri_o"

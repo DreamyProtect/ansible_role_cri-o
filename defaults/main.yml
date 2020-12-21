@@ -1,0 +1,7 @@
+---
+# default variables
+
+cri_o_kubernetes_version: "1.20"
+_cri_o_packages:
+  - "cri-o"
+  - "cri-o-runc"
