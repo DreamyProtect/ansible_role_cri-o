@@ -5,6 +5,16 @@
   hosts: all
   gather_facts: false
   tasks:
-  - name: Example assertion
+  - name: "Gather CRI-O service status"
+    systemd:
+      name: cri-o
+      state: started
+    register: crio_status
+    become: true
+
+  - debug:
+      msg: "{{ crio_status.state }}"
+
+  - name: "Make sure CRI-O is reloaded"
     assert:
-      that: true
+      that: crio_status.state == "started"
