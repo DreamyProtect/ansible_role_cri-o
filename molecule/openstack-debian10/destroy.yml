@@ -26,7 +26,7 @@
           username: "{{ lookup('env', 'OS_USERNAME') }}"
           password: "{{ lookup('env', 'OS_PASSWORD') }}"
           project_name: "{{ lookup('env', 'OS_PROJECT_NAME')}}"
-        name: "molecule-crio-deb10-{{ lookup('env', 'GITHUB_SHA') }}-deb10"
+        name: "molecule-crio-{{ lookup('env', 'GITHUB_SHA') }}-deb10"
         image: debian-10-openstack-amd64
 
     - name: "Create a temporary keypair with the ssh key of the host"
