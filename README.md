@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to role_cri-o 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/dynamic/json?url=https://api.github.com/repos/DreamyProtect/ansible_role_cri_o/releases/latest&label=version&query=$.tag_name&color=blue" />
   <a href="https://github.com/DreamyProtect/ansible_role_cri-o/blob/main/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
