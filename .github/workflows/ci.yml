@@ -1,6 +1,6 @@
 ---
 name: Tests on Debian 10 using Openstack and Molecule
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
