@@ -39,7 +39,7 @@ cri_o_kubernetes_version: 1.20
 
 * Twitter: [@404MomNotFound](https://twitter.com/404MomNotFound)
 * Github: [@DreamyProtect](https://github.com/DreamyProtect)
-* LinkedIn: [@Matthieu Chevreux](https://linkedin.com/in/Matthieu Chevreux)
+* LinkedIn: [@Matthieu Chevreux](https://linkedin.com/in/matthieu-chevreux-479680111)
 
 ## 🤝 Contributing
 
