@@ -27,3 +27,5 @@
       "{{ _cri_o_packages }}"
     state: present
     update_cache: yes
+  notify:
+    - "Start CRI-O service"
