@@ -1,0 +1,6 @@
+---
+- name: Start CRI-O service
+  service:
+    name: cri-o
+    state: started
+  become: true

@@ -6,12 +6,8 @@
   gather_facts: false
   tasks:
   - name: "Gather CRI-O service status"
-    systemd:
-      name: cri-o
-      state: started
-    register: crio_status
-    become: true
+    ansible.builtin.service_facts:
 
-  - name: "Make sure CRI-O is reloaded"
+  - name: "Make sure CRI-O is running"
     assert:
-      that: crio_status.state == "started"
+      that: ansible_facts.services["cri-o.service"].state == "active"
